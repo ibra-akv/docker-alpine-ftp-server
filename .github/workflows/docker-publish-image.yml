@@ -1,5 +1,4 @@
 name: Docker hub auto publish image
-
 on:
   push:
     branches:
