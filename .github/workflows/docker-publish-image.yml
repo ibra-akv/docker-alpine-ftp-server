@@ -1,13 +1,15 @@
 name: Docker hub auto publish image
 on:
   push:
-    branches:
-      - master
-    paths:
-      # Run when file is edited
-      - Dockerfile
-      - start_vsftpd.sh
-      - vsftpd.conf
+    pull_request:
+      branches:
+        - master
+    push:
+      branches:
+        - master
+        - "*/*"
+      tags:
+        - "*.*.*"
 
   # Run tests for any PRs.
   pull_request:
